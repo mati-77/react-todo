@@ -3,15 +3,15 @@ import { useDispatch } from 'react-redux';
 
 import { complete } from './tasksSlice';
 
-export default function Todo({ todo, keyValue }) {
+export default function Todo({ todo }) {
 
     const dispatch = useDispatch()
 
 
     function handleClick(e) {
         e.preventDefault()
-        console.log(e)
-        let idToSearch = Number(e.target.id)
+        console.log(e.currentTarget)
+        let idToSearch = Number(e.currentTarget.id)
         dispatch(complete(idToSearch))
     }
 

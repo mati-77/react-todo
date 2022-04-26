@@ -38,10 +38,18 @@ export const tasksSlice = createSlice({
                 return task.id === id ? {...task, complete: !task.complete} : {...task}
             })
             state.value = mapped
+        },
+
+        clearCompleted : state => {
+            let filterCompleted = state.value.filter(task => {
+                return task.complete === false
+            })
+            console.log(filterCompleted)
+            state.value = filterCompleted
         }
     }
 })
 
-export const { complete } = tasksSlice.actions
+export const { complete, clearCompleted } = tasksSlice.actions
 
 export default tasksSlice.reducer
