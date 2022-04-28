@@ -46,10 +46,14 @@ export const tasksSlice = createSlice({
             })
             console.log(filterCompleted)
             state.value = filterCompleted
+        },
+
+        addTask : (state, action) => {
+            state.value.push({id: state.value.length + 1, task: action.payload, complete: false})
         }
     }
 })
 
-export const { complete, clearCompleted } = tasksSlice.actions
+export const { complete, clearCompleted, addTask } = tasksSlice.actions
 
 export default tasksSlice.reducer

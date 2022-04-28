@@ -9,8 +9,7 @@ export default function Todo({ todo }) {
 
 
     function handleClick(e) {
-        e.preventDefault()
-        console.log(e.currentTarget)
+        console.log(e)
         let idToSearch = Number(e.currentTarget.id)
         dispatch(complete(idToSearch))
     }

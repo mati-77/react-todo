@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearCompleted } from './tasksSlice';
 
 import Todo from './Todo';
+import ToDoForm from './ToDoForm';
 
 
 export default function TasksList() {
@@ -13,13 +14,9 @@ export default function TasksList() {
 
     const dispatch = useDispatch()
 
-    function clearCompletedTasks(e){
-        e.preventDefault()
-        dispatch(clearCompleted())
-    }
-
     return(
         <div>
+            <ToDoForm />
             {
                 tasksList.map(todo => {
                     return (
@@ -29,7 +26,7 @@ export default function TasksList() {
                     )
                 })
             }
-            <button onClick={clearCompletedTasks}>Clear Completed</button>
+            <button onClick={() => dispatch(clearCompleted())}>Clear Completed</button>
         </div>
     )
 }
