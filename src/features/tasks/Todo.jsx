@@ -10,13 +10,15 @@ export default function Todo({ todo }) {
 
     function handleClick(e) {
         console.log(e)
-        let idToSearch = Number(e.currentTarget.id)
+        let idToSearch = e.currentTarget.id
+        console.log(idToSearch)
+        console.log(typeof(idToSearch))
         dispatch(complete(idToSearch))
     }
 
     return(
-        <div className={todo.complete ? "completed" : ""} onClick={handleClick} key={todo.id + todo.task} id={todo.id}>
-            <h3>{todo.task}</h3>
+        <div className={todo.complete ? "completed" : ""} onClick={handleClick} key={todo.id} id={todo.id}>
+            <h4>{todo.task}</h4>
         </div>
     )
 }

@@ -15,12 +15,16 @@ export default function ToDoForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        dispatch(addTask(userInput))
-        setUserInput('')
+        if (userInput.length !== 0) {
+            dispatch(addTask(userInput))
+            setUserInput('')
+        }
+        
+        
     }
 
     return(
-        <form action="">
+        <form action="" className='form'>
             <input value={userInput} type="text" onChange={handleChange} placeholder='Ingresar tarea...' />
             <button type="submit" onClick={handleSubmit}>Añadir Tarea</button>
         </form>

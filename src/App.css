@@ -1,3 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.App {
+    background-color: #77dd76;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    align-items: center;
+    overflow: scroll;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+.header--title {
+    font-size: 4rem;
+}
+
+/*Form Styles*/
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    justify-content: space-evenly;
+}
+
+.form input {
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.form button {
+    height: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/*Task list styles*/
+
+.tasklist {
+    margin-bottom: 1.5rem;
+}
+
+/*Clear completed button styles*/
+
+.clearcompleted {
+    margin-bottom: 2rem;
+}
+
 .completed {
     text-decoration: line-through;
 }

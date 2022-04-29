@@ -3,33 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const tasksSlice = createSlice({
     name: 'tasks',
     initialState: {
-        value: [
-            {
-                "id": 1,
-                "task": "Bañar al perro",
-                "complete": true
-            }, 
-            {
-                "id": 2,
-                "task": "Lavar la ropa",
-                "complete": true
-            }, 
-            {
-                "id": 3,
-                "task": "Limpiar el piso",
-                "complete": false
-            }, 
-            {
-                "id": 4,
-                "task": "Alimentar al gato",
-                "complete": true
-            }, 
-            {
-                "id": 5,
-                "task": "Cambiar focos de luz",
-                "complete": false
-            }
-        ]
+        value: []
     },
     reducers: {
         complete : (state, action) => {
@@ -49,7 +23,7 @@ export const tasksSlice = createSlice({
         },
 
         addTask : (state, action) => {
-            state.value.push({id: state.value.length + 1, task: action.payload, complete: false})
+            state.value.push({id: crypto.randomUUID(), task: action.payload, complete: false})
         }
     }
 })

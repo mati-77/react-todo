@@ -1,22 +1,16 @@
 import React from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-
-import { clearCompleted } from './tasksSlice';
+import { useSelector } from 'react-redux';
 
 import Todo from './Todo';
-import ToDoForm from './ToDoForm';
 
 
 export default function TasksList() {
 
     const tasksList = useSelector(state => state.tasks.value);
 
-    const dispatch = useDispatch()
-
     return(
-        <div>
-            <ToDoForm />
+        <div className='tasklist'>
             {
                 tasksList.map(todo => {
                     return (
@@ -26,7 +20,6 @@ export default function TasksList() {
                     )
                 })
             }
-            <button onClick={() => dispatch(clearCompleted())}>Clear Completed</button>
         </div>
     )
 }
