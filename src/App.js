@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 
 //Components
@@ -6,19 +6,16 @@ import Header from './components/Header';
 import TasksList from './features/tasks/TasksList';
 import ToDoForm from './features/tasks/ToDoForm';
 
-import { clearCompleted } from './features/tasks/tasksSlice';
+import ClearButton from './features/tasks/ClearButton';
 
 function App() {
-  const dispatch = useDispatch()
 
   return (
     <div className="App">
       <Header />
       <ToDoForm />
       <TasksList />
-      <div className='clearcompleted'>
-        <button onClick={() => dispatch(clearCompleted())}>Eliminar completadas</button>
-      </div>
+      <ClearButton />
     </div>
   );
 }

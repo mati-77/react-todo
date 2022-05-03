@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { useState } from 'react';
+
 import { useDispatch } from 'react-redux';
+
 import { addTask } from './tasksSlice';
 
 export default function ToDoForm() { 
@@ -19,8 +21,6 @@ export default function ToDoForm() {
             dispatch(addTask(userInput))
             setUserInput('')
         }
-        
-        
     }
 
     return(

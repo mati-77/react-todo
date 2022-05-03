@@ -1,25 +1,40 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-import Todo from './Todo';
-
+import { complete } from './tasksSlice';
 
 export default function TasksList() {
+
+    const dispatch = useDispatch()
+
+
+    function handleClick(e) {
+        console.log(e)
+        let idToSearch = e.currentTarget.id
+        console.log(idToSearch)
+        console.log(typeof(idToSearch))
+        dispatch(complete(idToSearch))
+    }
 
     const tasksList = useSelector(state => state.tasks.value);
 
     return(
-        <div className='tasklist'>
+        <ul className='tasklist'>
             {
                 tasksList.map(todo => {
                     return (
-                        <div key={todo.id}>
-                            <Todo todo={todo}/>
-                        </div>
+                        <li 
+                            key={todo.id} 
+                            id={todo.id} 
+                            className={todo.complete ? "task completed" : "task"} 
+                            onClick={handleClick}
+                        >
+                            {todo.task}
+                        </li>
                     )
                 })
             }
-        </div>
+        </ul>
     )
 }
