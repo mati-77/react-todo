@@ -14,7 +14,7 @@ export default function TasksList() {
             {
                 tasksList.map(todo => {
                     return (
-                        <div key={todo.id + todo.task}>
+                        <div key={todo.id}>
                             <Todo todo={todo}/>
                         </div>
                     )
