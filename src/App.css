@@ -15,7 +15,7 @@ html {
     flex-direction: column;
     padding-top: 5rem;
     align-items: center;
-    overflow: scroll;
+    overflow: auto;
 }
 
 h4 {
@@ -40,6 +40,7 @@ h4 {
     height: 4rem;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
+    font-size: 2rem;
 }
 
 .form button {
@@ -98,4 +99,18 @@ h4 {
 
 .completed {
     text-decoration: line-through;
+}
+
+@media (min-width: 600px) {
+
+    .tasklist {
+        max-width: unset;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+
 }
