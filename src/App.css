@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 html {
     font-size: 62.5%;
@@ -85,6 +88,8 @@ h4 {
     font-weight: 600;
     background-color: antiquewhite;
     height: 3.5rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
 }
 
 .clearcompleted button:focus {
@@ -94,7 +99,7 @@ h4 {
 .task {
     font-size: 2.5rem;
     list-style: none;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .completed {
@@ -105,12 +110,17 @@ h4 {
 
     .tasklist {
         max-width: unset;
-        width: 100%;
+        width: 90%;
         display: grid;
         justify-items: center;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         grid-template-rows: 1fr 1fr 1fr;
-        grid-gap: 10px;
+        column-gap: 2rem;
+        row-gap: 2rem;
+    }
+
+    .task {
+        margin-bottom: unset;
     }
 
 }
